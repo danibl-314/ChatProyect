@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Programas Ingeniería de Sistemas</h2>
+    
+    <div class="program-list">
+        {% for carrera in carreras %}
+        <div class="programa-item">
+            <h3>{{ carrera['descripcion'] }}</h3>
+        </div>
+        {% else %}
+        <p>No hay programas disponibles.</p>
+        {% endfor %}
+    </div>
+
+    <form action="{{ url_for('agregar_programa') }}" method="post">
+        <label for="descripcion_carrera">Descripción Carrera</label>
+        <input type="text" id="descripcion_carrera" name="descripcion_carrera" required>
+        <button type="submit">Agregar</button>
+    </form>
+{% endblock %}
