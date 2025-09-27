@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+<<<<<<< HEAD
     <h2>Nuestros Programas Académicos</h2>
     
     <hr>
+=======
+    <h2>Programas Ingeniería de Sistemas</h2>
+>>>>>>> 8be39d25503b091eca6856c906cfca6c21988bd7
     
     <div class="program-list">
         {% for carrera in carreras %}
         <div class="programa-item">
             <h3>{{ carrera['descripcion'] }}</h3>
+<<<<<<< HEAD
             
             <div class="actions">
                 <a href="{{ url_for('editar_carrera', id=carrera['id']) }}" class="edit-btn">
@@ -22,9 +27,20 @@
                 </form>
             </div>
             
+=======
+>>>>>>> 8be39d25503b091eca6856c906cfca6c21988bd7
         </div>
         {% else %}
         <p>No hay programas disponibles.</p>
         {% endfor %}
     </div>
+<<<<<<< HEAD
+=======
+
+    <form action="{{ url_for('agregar_programa') }}" method="post">
+        <label for="descripcion_carrera">Descripción Carrera</label>
+        <input type="text" id="descripcion_carrera" name="descripcion_carrera" required>
+        <button type="submit">Agregar</button>
+    </form>
+>>>>>>> 8be39d25503b091eca6856c906cfca6c21988bd7
 {% endblock %}

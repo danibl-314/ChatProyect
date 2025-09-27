@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -29,5 +30,30 @@
         <p>&copy; 2025 Universitaria de Colombia</p>
         </footer>
     
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Universidad</h1>
+        <img src="https://universitariadecolombia.edu.co/wp-content/uploads/2025/04/Logo_universitaria_white_3-1.png" srcset="https://universitariadecolombia.edu.co/wp-content/uploads/2025/04/Logo_universitaria_white_3-1.png 1x" width="169" height="57" alt="Universitaria de Colombia Logo" data-retina_logo_url="" class="fusion-sticky-logo">
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/vision">Visión</a>
+            <a href="/mision">Misión</a>
+            <a href="/programas">Programas</a>
+        </nav>
+    </header>
+
+   <div class="page-content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2025 Universidad</p>
+    </footer>
+>>>>>>> 8be39d25503b091eca6856c906cfca6c21988bd7
 </body>
 </html>

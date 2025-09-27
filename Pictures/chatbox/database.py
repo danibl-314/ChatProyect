@@ -14,6 +14,15 @@ def create_connection():
         db_path = os.path.join(BASE_DIR, DATABASE) 
         conn = sqlite3.connect(db_path)
         conn.row_factory = sqlite3.Row
+
+DATABASE = 'sisemasexp.db'
+
+def create_connection():
+    """Create a connection to the SQLite database."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DATABASE)
+        conn.row_factory = sqlite3.Row  # This allows you to access columns by name
     except sqlite3.Error as e:
         print(f"Error connecting to database: {e}")
     return conn
@@ -26,6 +35,11 @@ def init_db():
             sql_file_path = os.path.join(BASE_DIR, 'sentencias.sql') 
             
             with open(sql_file_path, 'r') as f:
+    """Initializes the database by running the SQL script."""
+    conn = create_connection()
+    if conn:
+        try:
+            with open('sentencias.sql', 'r') as f:
                 sql_script = f.read()
             conn.executescript(sql_script)
             conn.commit()
@@ -88,3 +102,4 @@ def delete_carrera(carrera_id):
     return success
 
 # ... (Tu código existente) ...
+    init_db()

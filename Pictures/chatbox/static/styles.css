@@ -1,3 +1,4 @@
+
 /* ======================================= */
 /* 1. VARIABLES GLOBALES Y ESTILOS BASE */
 /* ======================================= */
@@ -47,6 +48,25 @@ header {
     align-items: center;
 }
 
+/* Estilo de la navegación */
+nav ul {
+    list-style: none; /* Quita las viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinea los enlaces horizontalmente */
+    gap: 1.5rem; /* Espacio entre los enlaces */
+}
+
+nav a {
+    color: #f0f0f0;
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+nav a:hover {
+    color: #ffcc00; /* Un color de resaltado al pasar el mouse */
+}
 /* Estilo para el contenedor del logo */
 .logo {
     display: flex;
@@ -62,7 +82,6 @@ header {
     font-size: 1.5rem;
     margin: 0;
 }
-
 /* Estilo de la navegación */
 nav ul {
     list-style: none;
@@ -95,11 +114,46 @@ footer {
     box-sizing: border-box;
 }
 
+/* Estilo del encabezado */
+header {
+    background-color: #0d1e44; /* Un azul oscuro, típico de universidades */
+    color: #f0f0f0; /* Color de texto claro */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+/* Estilo del pie de página */
+footer {
+    background-color: #0d1e44; /* Color azul oscuro del pie de página */
+    color: #f0f0f0;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+html, body {
+    height: 100%; /* Asegura que el HTML y el body ocupen el 100% del viewport */
+    margin: 0;
+}
+
+body {
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+}
+
+.page-content {
+    flex-grow: 1; /* Esto hace que el div crezca y empuje el footer hacia abajo */
+}
+
+/* Opcional: para asegurar que el footer siempre tenga un ancho completo */
+footer {
+    width: 100%;
+}
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap; 
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -108,6 +162,8 @@ footer {
 .footer-column {
     flex: 1; 
     min-width: 250px; 
+    flex: 1; /* Distribuye el espacio equitativamente */
+    min-width: 250px; /* Ancho mínimo para evitar que se aplasten */
     margin: 1rem;
 }
 
@@ -115,6 +171,8 @@ footer {
 .footer-column h4 {
     color: var(--text-light);
     border-bottom: 2px solid var(--text-light);
+    color: #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
     padding-bottom: 0.5rem;
     font-weight: bold;
 }
@@ -131,6 +189,11 @@ footer {
     text-decoration: none;
     margin-bottom: 0.5rem;
     display: block;
+    color: #f0f0f0;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block; /* Para que cada enlace ocupe una línea */
+>>>>>>> 8be39d25503b091eca6856c906cfca6c21988bd7
 }
 
 .footer-column ul li a:hover,
@@ -299,4 +362,11 @@ form[action*="agregar_programa"] button[type="submit"] {
 
 .send-btn:hover {
     background-color: #005f99;
+}
+/* Estilo para la sección de certificaciones */
+.certifications .certification-item {
+    background-color: #123267; /* Un color ligeramente más claro */
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
 }
