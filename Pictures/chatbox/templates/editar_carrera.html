@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Carrera{% endblock %}
+
+{% block content %}
+    <h2>Editar Carrera: {{ carrera['descripcion'] }}</h2>
+    
+    <form method="POST">
+        <label for="descripcion_carrera">Nueva Descripción de Carrera</label>
+        <input type="text" id="descripcion_carrera" name="descripcion_carrera" 
+               value="{{ carrera['descripcion'] }}" required>
+        
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    
+    <hr>
+    
+    <a href="{{ url_for('programas') }}">Cancelar y volver a Programas</a>
+
+{% endblock %}
+/* --- Estilo para el Contenedor de Formulario y Listas de Programas --- */
+
+form {
+    background-color: var(--bg-medium);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto; /* Centra el formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: var(--text-light);
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+}
+
+input[type="text"]:focus {
+    border-color: var(--highlight-blue);
+    outline: none;
+}
+
+/* --- Estilo Específico para Botones de Acción (Editar/Eliminar) --- */
+
+.program-list {
+    margin-top: 2rem;
+}
+
+.programa-item {
+    background-color: var(--bg-medium);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--highlight-blue);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between; /* Alinea el título a la izquierda y los botones a la derecha */
+    align-items: center;
+}
+
+.edit-btn {
+    background-color: #007ACC;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.delete-btn {
+    background-color: #CC0000; /* Rojo para advertir */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-btn:hover { background-color: #005f99; }
+.delete-btn:hover { background-color: #990000; }

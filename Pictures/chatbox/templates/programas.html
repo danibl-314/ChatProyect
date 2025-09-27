@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Nuestros Programas Académicos</h2>
+    
+    <hr>
+    
+    <div class="program-list">
+        {% for carrera in carreras %}
+        <div class="programa-item">
+            <h3>{{ carrera['descripcion'] }}</h3>
+            
+            <div class="actions">
+                <a href="{{ url_for('editar_carrera', id=carrera['id']) }}" class="edit-btn">
+                    Editar
+                </a>
+                
+                <form method="POST" action="{{ url_for('eliminar_carrera', id=carrera['id']) }}" 
+                      style="display: inline;"> <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este programa?');" class="delete-btn">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+        {% else %}
+        <p>No hay programas disponibles.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
